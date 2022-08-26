@@ -1,50 +1,49 @@
 let selectionHandle;
 let computer;
-let pScore;
-let cScore;
+let pScore = 0;
+let cScore = 0;
+let maxScore = 0;
 
-startGame()
-
-    
-//     let cScore = 0; 
-//     let pScore = 0;
-//     let maxScore = 0;
-    // while (maxScore < 6) {
-    //     playRound();
-    //     if (result === "WIN") 
-    //     {pScore += 1 ;}
-    //     else if (result === "LOSE") 
-    //     {cScore += 1 ;}
-
-    //     if (pScore > cScore){
-    //         maxScore = pScore;
-    //     } else {
-    //         maxScore = cScore;
-    //     }
-    // }
-  //adding 'p' tag to body
-
-
-//   let element = document.getElementsByTagName("body")[0];
-//   element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
-// }
-
+startGame(); 
 
 function startGame(){
-
-    let playerSelection = prompt('Rock, Scissors or Paper?');
-    validateInput(playerSelection);
-    getComputerChoice();
-    let result = playRound(selectionHandle, computer);
-    outputResults(result, selectionHandle, computer);
-
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt('Rock, Scissors or Paper?');
+        validateInput(playerSelection);
+        getComputerChoice();
+        let result = playRound(selectionHandle, computer);
+        outputResults(result, selectionHandle, computer);
+        
+        
+        if (result === "draw"){
+        i -= 1 ;
+        }
+    }
 }
+
+
 
 function outputResults(result, playerSelection, computer) {
-    console.log("Player: " + selectionHandle + " " + "Computer: " + computer);
-    if (confirm(`${result.toUpperCase()}:\nPlayer: ${playerSelection}\nComputer: ${computer}\n\n------ PLAY AGAIN? ------`))
-    {startGame()}
+    if (result === "win") 
+        {pScore += 1 ;}
+    else if (result === "lose") 
+        {cScore += 1 ;}
+
+    if (pScore > cScore){
+        maxScore = pScore;
+    } else {
+        maxScore = cScore;
+    }
+
+    //if (confirm(`${result.toUpperCase()}:\nPlayer: ${playerSelection}\nComputer: ${computer}\n\n------ PLAY AGAIN? ------`))
+    document.getElementById("gameResults").innerHTML = `${result.toUpperCase()}:\nPlayer: ${playerSelection}\nComputer: ${computer}`;
+   // Print Running score on page
+    document.getElementById("pTotal").innerHTML = pScore;
+    document.getElementById("cTotal").innerHTML = cScore;
+    
+    return result
 }
+
 
 function validateInput(playerSelection){
     selectionHandle = playerSelection.toLowerCase().substr(0,1);
