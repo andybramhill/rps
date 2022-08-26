@@ -3,16 +3,21 @@ let pScore = 0;
 let cScore = 0;
 let maxScore = 0;
 let computer;
+
 startGame();
 
 function startGame() {
+    // Play to best of five (excluding drawn games)
     for (let i = 0; i < 5; i++) {
         let resultFlag = 'draw';
+        
+        // process gameplay and replay if a draw
         while (resultFlag === 'draw') {
-            let playerSelection = prompt('Rock, Scissors or Paper?');
-            validateInput(playerSelection);
+            let playerChoice = prompt('Rock, Scissors or Paper?');
+            validateInput(playerChoice);
             getComputerChoice();
             let result = playRound(selectionHandle, computer);
+            
             if (result != 'draw') {
                 resultFlag = result;
             }
@@ -26,7 +31,7 @@ function startGame() {
 
 
 
-function outputResults(result, playerSelection, computerSelection) {
+function outputResults(result, playerChoice, computerSelection) {
     if (result === "win") { pScore += 1; }
     else if (result === "lose") { cScore += 1; }
 
@@ -37,8 +42,8 @@ function outputResults(result, playerSelection, computerSelection) {
     }
 
     // Show Round Result
-    alert(`${result.toUpperCase()}:\nPlayer: ${playerSelection}\nComputer: ${computerSelection}\n\nSCORE:\nPayer: ${pScore} Computer: ${cScore}`);
-    document.getElementById("gameResults").innerHTML = `${result.toUpperCase()}:\nPlayer: ${playerSelection}\nComputer: ${computerSelection}`;
+    alert(`${result.toUpperCase()}:\nPlayer: ${playerChoice}\nComputer: ${computerSelection}\n\nSCORE:\nPayer: ${pScore} Computer: ${cScore}`);
+    document.getElementById("gameResults").innerHTML = `${result.toUpperCase()}:\nPlayer: ${playerChoice}\nComputer: ${computerSelection}`;
 
     // Print Running score on page
     document.getElementById("pTotal").innerHTML = pScore;
@@ -48,13 +53,13 @@ function outputResults(result, playerSelection, computerSelection) {
 }
 
 
-function validateInput(playerSelection) {
-    selectionHandle = playerSelection.toLowerCase().substr(0, 1);
+function validateInput(playerChoice) {
+    selectionHandle = playerChoice.toLowerCase().substr(0, 1);
     if (selectionHandle === 'r' || selectionHandle === 'p' || selectionHandle === 's') { return selectionHandle; }
     else {
         selectionHandle = "";
-        playerSelection = prompt('INVALID INPUT... Try again: \nRock, Scissors or Paper?');
-        validateInput(playerSelection);
+        playerChoice = prompt('INVALID INPUT... Try again: \nRock, Scissors or Paper?');
+        validateInput(playerChoice);
     }
 }
 
