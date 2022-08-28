@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+
+document.getElementById("demo").innerHTML = text;
+
+// ----------------- LOOOPS ----------------------
+
+
+// FOR LOOP
+const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+
+for (let i = 0; i < cats.length; i++) {
+  console.log(cats[i]);
+}
+
+
+// FOR OF LOOP
+for (const cat of cats) {
+  console.log(cat);
+}
+
+
+// WHILE LOOP (checks condition first then acts(or not))
+const cats = ['Pete', 'Biggles', 'Jasmine'];
+let myFavoriteCats = 'My cats are called ';
+let i = 0;
+
+while (i < cats.length) {
+  if (i === cats.length - 1) {
+    myFavoriteCats += `and ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `${cats[i]}, `;
+  }
+
+  i++;
+}
+
+// DO WHILE LOOP (acts then checks condition for continuing)
+i = 0;
+
+do {
+  if (i === cats.length - 1) {
+    myFavoriteCats += `and ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `${cats[i]}, `;
+  }
+
+  i++;
+} while (i < cats.length);
+
+</script>
+
+</body>
+</html>

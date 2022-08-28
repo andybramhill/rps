@@ -79,6 +79,7 @@ function playRound(pChoice, cChoice) {
 }
 
 
+
 function getComputerChoice() {
 
     let compChoice = Math.floor(Math.random() * 3);
