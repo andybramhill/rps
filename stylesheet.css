@@ -1,0 +1,207 @@
+/* stylesheet.css */
+* {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+  }
+
+html, body {
+	min-height: 100%;
+	background: rgb(13, 1, 91);
+	color: #000;
+    margin: 0%;
+}
+	
+body {    
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+	font-size: 2rem;
+	text-rendering: optimizeLegibility;
+}
+
+.container {
+    height:min-content;
+    justify-content: center;
+
+    
+}
+
+p {
+    color: khaki;
+    vertical-align: middle;
+    height: auto;
+    width: auto;
+    background-color:rgb(13, 1, 91);
+}
+
+h1 {
+    color: azure;
+    font-size: larger;
+}
+
+h3    {
+    font-size: 1.5rem;  
+}
+
+.header {
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: small;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}	
+
+.pScoresDiv, .cScoresDiv {
+    height: fit-content;
+}
+
+.playerScore, .computerScore {
+    width: 15rem;
+    display: flex;
+    color: khaki;
+    justify-content: center;
+    
+}
+
+.playBox, #displayBox {
+   /* width: 25rem; */
+    font-size: 2rem;
+    background-color: rgb(13, 1, 91);
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.plScoreResults, .coScoreResults, p {
+    margin: 0px;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: khaki;
+    vertical-align: middle;
+    height: auto;
+    width: auto;
+}
+
+#playerBox{
+    transform: rotate(90deg);
+    position: relative;
+    margin-right: 2%;
+
+}
+
+#computerBox{
+    transform: rotate(270deg);
+    position: relative;
+    margin-left: 2%;
+}
+
+#displayBox {
+    width: 25rem;
+    text-align: center;
+    justify-content: center;
+
+ margin-left: auto;
+margin-right: auto; 
+display: flex;
+flex-direction: column;
+border: 3px solid white;
+border-radius: 15px;
+
+opacity: 1;
+background-color: rgb(4, 29, 51);
+
+}
+
+.handResults, .handResults2, .handResults3, .handResults4, .handResults5 {
+text-align: center;
+font-weight: bold;
+color: rgb(8, 143, 246);
+background-color: rgb(4, 29, 51);
+border-radius: 15px;
+}
+
+.handResults3, .handResults4 {
+    color: red;
+    
+}
+
+
+.playerBoxDisplay, .computerBoxDisplay {
+    font-size:7rem;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    padding: 2vw;
+    
+    
+}
+
+.actionBox {
+    display: flex;
+    justify-content: center;
+    text-align: center;    
+}
+
+#buttonLabels{
+     display: flex; 
+     flex-direction: row;  
+     justify-content: center;
+     font-size: small;
+}
+
+#buttons{
+    width: 75%;
+    text-align: center;
+    justify-content: center;
+    background-color:rgb(13, 1, 91);
+}
+
+.selection{
+    color:khaki;
+}
+
+#✊, #✋, #✌ {
+    font-size: 5rem;
+    padding: 5px;
+    justify-content: center;
+    background-color:green;
+    
+    border-radius: 8px;
+    margin-bottom: 2vw;
+    border: 2px solid bisque;
+    transition-duration: 0.2s;  
+}
+
+button#✊:hover, button#✋:hover, button#✌:hover {
+    background-color:blue;
+  }
+
+  button.playagain {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: khaki;
+    background-color: blue;
+    padding: 1vw;
+    margin: 1vw;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: auto;
+    
+  }
