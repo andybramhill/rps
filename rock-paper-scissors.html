@@ -4,22 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
     <title>Document</title>
+
 </head>
 <body>
-<div>
-    <h1>SCORE:</h1>
-    <h2>Player: </h2>
-    <h2 id="pTotal"></h2>
-    <h2>Computer: </h2>
-    <h2 id="cTotal"></h2>
-    <h1 id = "win"></h1>
-</div>
+    <div class="container">
+        <div class = "header">
+            <h1>Rock Paper Scissors</h1>
+        </div>
 
-<div>
-    <h2>Game Results:</h2>
-    <p id="gameResults"></p>
-</div>
+        <div class = "scores">
+            <div class = "playerScore">
+                <div class = "pScoresDiv">
+                    <p class = "plScoreResults">Player:</p>
+                </div>
+                <div id="plScore">
+                 <!-- box for player score (pScore)                    -->
+                </div>
+            </div>
+
+            <div class = "computerScore">
+                <div class = "cScoresDiv">
+                    <p class = "coScoreResults">Computer:</p>
+                </div>
+                <div id="coScore">
+                <!-- box for computer score (cScore) -->
+                </div>
+            </div>
+        </div>
+
+        <div class = "playBox">
+            <div id = "playerBox">
+            <!-- Box for hand icons - PLAYER -->
+            </div>
+
+            <div id = "computerBox">
+            <!-- Box for hand icons - COMPUTER -->
+            </div>
+        </div>
+
+        <div id="displayBox">
+        <!-- display box for round results -->        
+        </div>
+        
+        <div class = "actionBox">
+            <div id="buttons">
+                <h3 class = "selection">Make Your Selection:</h3>
+                <button id="✊">✊</button>
+                <button id="✋">✋</button>
+                <button id="✌">✌</button>
+            </div>    
+        </div>
+
+       <div>
+        <p>
+            &nbsp;</p><p>&nbsp;</p>
+       </div>
+
+        <div class="footer">
+            <br><br>
+            <p class = 'footer'>
+              Copyright ©
+              <script>
+                document.write(new Date().getFullYear())
+              </script>
+              Andy Bramhill
+            </p>        
+        </div>
+
+    </div>
+    
+    
 
     <script type="text/javascript" src="rock-paper-scissors.js"></script>
 </body>
