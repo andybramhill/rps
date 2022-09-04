@@ -211,7 +211,6 @@ function outputEndResults(resultsDisplayString, resultsDisplayString2) {
     displayBox.appendChild(handResults4);
     displayBox.appendChild(playAgainButton);
     
-   const e = document.querySelector("#buttons"); 
    e.style.display = 'none';
    
     playAgainButton.addEventListener ("click", function(){
@@ -219,7 +218,6 @@ function outputEndResults(resultsDisplayString, resultsDisplayString2) {
         displayBox.removeChild(handResults4);
         displayBox.removeChild(playAgainButton);
         firstRound = true
-        const e = document.querySelector("#buttons"); 
         e.style.display = 'block';
         start();
         });
